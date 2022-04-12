@@ -203,7 +203,7 @@ class ZippedFile(ReusableFile):
             return archive
 
     def read(self, filename: str):
-        with self._manage_archive(file_name) as archive:
+        with self._manage_archive(file_name) as file_obj:
             return file_obj.read()
 
     def extract(self, list_of_filenames: List[str], folder_name: str = None):
